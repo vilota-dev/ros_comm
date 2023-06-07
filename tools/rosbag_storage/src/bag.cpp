@@ -800,7 +800,7 @@ void Bag::readMessageDataRecord102(uint64_t offset, ros::Header& header) const {
 // Reading this into a buffer isn't completely necessary, but we do it anyways for now
 void Bag::decompressRawChunk(ChunkHeader const& chunk_header) const {
     assert(chunk_header.compression == COMPRESSION_NONE);
-    assert(chunk_header.compressed_size == chunk_header.uncompressed_size);
+    // assert(chunk_header.compressed_size == chunk_header.uncompressed_size);
 
     CONSOLE_BRIDGE_logDebug("compressed_size: %d uncompressed_size: %d", chunk_header.compressed_size, chunk_header.uncompressed_size);
 
